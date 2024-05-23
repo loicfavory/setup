@@ -1,0 +1,63 @@
+{
+  "B034:7EB74538": {
+    "_modelId": "B03400000000",
+    "_name": "MX Master 3S",
+    "_sensitive": {
+      "mouse-gestures": true
+    },
+    "_serial": "7EB74538",
+    "_unitId": "7EB74538",
+    "divert-keys": {
+      "195": 1,
+      "196": 0,
+      "82": 0,
+      "83": 0,
+      "86": 0
+    },
+    "dpi": 1000,
+    "dpi-sliding": 0,
+    "hires-smooth-invert": false,
+    "hires-smooth-resolution": false,
+    "mouse-gestures": "195",
+    "reprogrammable-keys": {
+      "195": 195,
+      "196": 196,
+      "80": 80,
+      "81": 81,
+      "82": 82,
+      "83": 83,
+      "86": 86
+    },
+    "smart-shift": 10,
+    "thumb-scroll-invert": false,
+    "thumb-scroll-mode": false
+  },
+  "B369:3DE3CCEA": {
+    "_modelId": "B36900000000",
+    "_name": "MX Keys Mini",
+    "_serial": "3DE3CCEA",
+    "_unitId": "3DE3CCEA",
+    "backlight": true,
+    "disable-keyboard-keys": {
+      "1": false,
+      "16": false,
+      "8": false
+    },
+    "divert-keys": {
+      "226": 0,
+      "227": 0,
+      "229": 0,
+      "231": 0,
+      "232": 0,
+      "233": 0,
+      "259": 0,
+      "264": 0,
+      "266": 0,
+      "279": 0,
+      "284": 0
+    },
+    "fn-swap": true,
+    "multiplatform": 3
+  },
+  "_version": "1.1.1"
+}
