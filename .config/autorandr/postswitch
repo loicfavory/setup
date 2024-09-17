@@ -1,0 +1,8 @@
+#! /bin/sh
+
+i3 restart
+dunstify -i display "Display profile" "$AUTORANDR_CURRENT_PROFILE"
+sleep 3
+nitrogen --restore &
+dunstify -i display "Nitrogen restored"
+

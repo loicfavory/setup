@@ -1,0 +1,23 @@
+output eDP-1
+off
+output DP-1
+off
+output DP-2
+off
+output DP-4
+off
+output DVI-I-4-4
+off
+output DVI-I-3-3
+off
+output DVI-I-2-2
+off
+output DVI-I-1-1
+off
+output DP-3
+crtc 0
+gamma 0.769:0.5:0.286
+mode 5120x1440
+pos 0x0
+primary
+rate 59.98

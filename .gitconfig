@@ -1,0 +1,6 @@
+[user]
+	name = Loïc Lazar-Favory
+	email = loic@effetb.com
+[core]
+	autocrlf = input
+	filemode = false

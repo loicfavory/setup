@@ -1,0 +1,40 @@
+{
+	"$schema": "https://joplinapp.org/schema/settings.json",
+	"sync.target": 5,
+	"sync.5.path": "https://echange.effetb.com/remote.php/dav/files/Loic/Notes",
+	"sync.5.username": "loic",
+	"locale": "fr_FR",
+	"theme": 6,
+	"themeAutoDetect": false,
+	"preferredLightTheme": 6,
+	"markdown.plugin.softbreaks": false,
+	"markdown.plugin.typographer": false,
+	"ui.layout": {
+		"key": "root",
+		"children": [
+			{
+				"key": "sideBar",
+				"width": 250,
+				"visible": true
+			},
+			{
+				"key": "noteList",
+				"width": 250,
+				"visible": true
+			},
+			{
+				"key": "editor",
+				"visible": true
+			}
+		],
+		"visible": true
+	},
+	"noteVisiblePanes": [
+		"editor",
+		"viewer"
+	],
+	"api.token": "8c42471eeade93d116695d69c500357cbba6bb8d3e93209ed1f6b66c1ad5e28b374f9ecd0875f00c0ec0157ccaf268b5a472c6905f0458aadd966d20f48268f1",
+	"spellChecker.languages": [
+		"fr"
+	]
+}

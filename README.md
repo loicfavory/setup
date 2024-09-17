@@ -20,6 +20,12 @@ sudo vim /etc/netplan/01-network-manager-all.yaml
 
 sudo apt install dbus-x11 dbus-user-session dbus-broker dbus gir1.2-freedesktop
 
+sudo apt install playerctl brightnessctl
+
+sudo usermod -aG video ${USER}
+
+reboot
+
 sudo apt install thunar thunar-archive-plugin
 
 sudo apt install keepass2
