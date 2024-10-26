@@ -49,10 +49,12 @@ case $CMD in
     
     "--show")
         show_icon
+        exit 1
     ;;
     
     "--toggle")
         toggle
+        exit 1
     ;;
     
     *)

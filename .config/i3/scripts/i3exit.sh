@@ -1,7 +1,7 @@
 #!/bin/sh
 lock() {
     pkill -9 picom
-    i3lock --nofork -e -c '#220000'
+    /home/loic/.config/i3/scripts/lock.sh
 }
 
 case "$1" in
@@ -13,7 +13,7 @@ case "$1" in
         ;;
     suspend)
         pkill -9 picom
-        systemctl suspend
+        i3lock -c 000000 && systemctl suspend
         ;;
     hibernate)
         pkill -9 picom
