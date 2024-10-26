@@ -19,7 +19,7 @@ if type "xrandr"; then
   done
 fi
 if [ -z $MONITOR ]; then
-  MONITOR=$monitor polybar --reload example &
+  MONITOR=$monitor polybar --reload main &
 fi
 
 # echo "Bars launched..."

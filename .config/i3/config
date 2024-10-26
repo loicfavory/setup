@@ -1,17 +1,44 @@
+### > VARIABLES ###
 set $mod Mod4
+
+set $exec exec --no-startup-id
+
+set $polar_1 #2e3440
+set $polar_2 #3b4252
+set $polar_3 #434c5e
+set $polar_4 #4c566a
+
+set $snow_storm_1 #d8dee9
+set $snow_storm_2 #e5e9f0
+set $snow_storm_3 #eceff4
+
+set $frost_1 #8fbcbb
+set $frost_2 #88c0d0
+set $frost_3 #81a1c1
+set $frost_4 #5e81ac
+
+set $danger #bf616a
+set $warning #d08770
+set $alert #ebcb8b
+set $success #a3be8c
+set $info #b48ead
+
+### < VARIABLES ###
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-set $exec exec --no-startup-id
-
 $exec dex --autostart --environment i3
+
+include $HOME/.config/i3/includes/colors.conf
 
 include $HOME/.config/i3/includes/audio-keys.conf
 
 include $HOME/.config/i3/includes/autostart.conf
 
 include $HOME/.config/i3/includes/bindsym.conf
+
+include $HOME/.config/i3/includes/focus.conf
 
 include $HOME/.config/i3/includes/locker.conf
 
@@ -23,10 +50,3 @@ include $HOME/.config/i3/includes/theming.conf
 
 include $HOME/.config/i3/includes/workspaces.conf
 
-focus_on_window_activation focus
-for_window [class="^Terminator$"] focus
-for_window [class="^Pomodorolm"] floating enable
-for_window [class="^Blueman-manager$"] floating enable
-for_window [class="^Pavucontrol$"] floating enable
-for_window [class="^Qalculate-gtk$"] floating enable
-for_window [instance="libreoffice"] move container to workspace $ws8
