@@ -1,10 +1,4 @@
 [global_config]
-  title_transmit_fg_color = "#2E3440"
-  title_transmit_bg_color = "#88C0D0"
-  title_receive_fg_color = "#2E3440"
-  title_receive_bg_color = "#8FBCBB"
-  title_inactive_fg_color = "#D8DEE9"
-  title_inactive_bg_color = "#4C566A"
 [keybindings]
   hide_window = ""
   edit_tab_title = ""
@@ -13,12 +7,30 @@
     background_color = "#2e3440"
     background_darkness = 0.95
     background_type = transparent
-    cursor_color = "#D8DEE9"
-    font = Hack 9
+    font = JetBrainsMonoNL Nerd Font Mono 9
     foreground_color = "#D8DEE9"
     show_titlebar = False
     scrollbar_position = hidden
     palette = "#3b4252:#bf616a:#a3be8c:#ebcb8b:#81a1c1:#b48ead:#88c0d0:#e5e9f0:#4c566a:#bf616a:#a3be8c:#ebcb8b:#81a1c1:#b48ead:#8fbcbb:#eceff4"
+    use_system_font = False
+  [[Catppuccin_Latte]]
+    background_color = "#eff1f5"
+    background_image = None
+    foreground_color = "#4c4f69"
+    palette = "#5c5f77:#d20f39:#40a02b:#df8e1d:#1e66f5:#ea76cb:#179299:#acb0be:#6c6f85:#d20f39:#40a02b:#df8e1d:#1e66f5:#ea76cb:#179299:#bcc0cc"
+  [[Catppuccin_Frappe]]
+    background_color = "#303446"
+    background_image = None
+    foreground_color = "#c6d0f5"
+    palette = "#51576d:#e78284:#a6d189:#e5c890:#8caaee:#f4b8e4:#81c8be:#b5bfe2:#626880:#e78284:#a6d189:#e5c890:#8caaee:#f4b8e4:#81c8be:#a5adce"
+  [[Catppuccin_Macchiato]]
+    background_color = "#1e1e2e"
+    background_image = None
+    font = JetBrainsMonoNL Nerd Font Mono 9
+    foreground_color = "#cdd6f4"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#45475a:#f38ba8:#a6e3a1:#f9e2af:#89b4fa:#f5c2e7:#94e2d5:#bac2de:#585b70:#f38ba8:#a6e3a1:#f9e2af:#89b4fa:#f5c2e7:#94e2d5:#a6adc8"
     use_system_font = False
 [layouts]
   [[default]]
