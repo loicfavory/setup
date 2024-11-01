@@ -6,7 +6,6 @@
   [[default]]
     background_color = "#2e3440"
     background_darkness = 0.95
-    background_type = transparent
     font = JetBrainsMonoNL Nerd Font Mono 9
     foreground_color = "#D8DEE9"
     show_titlebar = False

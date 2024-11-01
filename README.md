@@ -1,24 +1,30 @@
-Installation instructions
+# Installation instructions
 
-Installation instructions
+## Install i3
 
-`$ sudo apt install xorg xinit`
 
-`wget https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2024.03.04_all.deb`
+`sudo apt install xorg xinit`
 
-sudo apt install ./sur5r-keyring_2024.03.04_all.deb
+`sudo apt install i3`
 
-echo "deb http://debian.sur5r.net/i3/ $(lsb_release -sc) universe" | sudo tee /etc/apt/sources.list.d/sur5r-i3.list
+`sudo apt install dbus-x11 dbus-user-session dbus-broker dbus gir1.2-freedesktop`
 
-sudo apt update
+## Install Thunar
 
-sudo apt install i3
+`sudo apt install thunar thunar-archive-plugin gvfs`
 
-sudo apt install network-manager network-manager-openvpn
+## Install network manager
 
-sudo vim /etc/netplan/01-network-manager-all.yaml
+`sudo apt install network-manager network-manager-openvpn`
 
-sudo apt install dbus-x11 dbus-user-session dbus-broker dbus gir1.2-freedesktop
+`sudo vim /etc/netplan/01-network-manager-all.yaml`
+
+    # Let NetworkManager manage all devices on this system
+    network:
+      version: 2
+      renderer: NetworkManager
+
+
 
 sudo apt install playerctl brightnessctl
 
@@ -26,14 +32,11 @@ sudo usermod -aG video ${USER}
 
 reboot
 
-sudo apt install thunar thunar-archive-plugin
+
 
 sudo apt install keepass2
 
-# Let NetworkManager manage all devices on this system
-network:
-  version: 2
-  renderer: NetworkManager
+
 
 sudo systemctl disable --now systemd-networkd.service
 
