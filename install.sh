@@ -33,7 +33,7 @@ sudo apt purge -y snapd
 
 # INSTALL I3
 sudo apt install xorg xinit
-sudo apt install i3
+sudo apt install i3 picom
 sudo apt install autorandr x11-xserver-utils arandr rofi nitrogen lxappearance
 sudo apt install dunst xssproxy redshift
 sudo apt install dbus-x11 dbus-user-session dbus-broker dbus gir1.2-freedesktop
@@ -58,12 +58,11 @@ systemctl --user --now start wireplumber.service
 sudo systemctl enable bluetooth
 
 # INSTALL MEDIA CONTROL
-sudo apt install playerctl brightnessctl pnmixer
+sudo apt install playerctl brightnessctl pnmixer pavucontrol
 sudo usermod -aG video ${USER}
 
 # INSTALL KEYRING
 sudo apt install gnome-keyring libpam-gnome-keyring
-
 
 # INSTALL TOOLS
 sudo apt install keepass2 redshift-gtk geany terminator rfkill htop
@@ -83,6 +82,7 @@ flatpak install -y flathub org.chromium.Chromium
 flatpak install -y flathub org.dbgate.DbGate
 flatpak install -y flathub org.filezillaproject.Filezilla
 flatpak install -v flathub com.vivaldi.Vivaldi
+flatpak install -v flathub com.spotify.Client
 
 # INSTALL DOCKER
 # Remove installed packages
