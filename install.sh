@@ -17,15 +17,15 @@ sudo apt install linux-modules-ipu6-oem-24.04
 
 # Install conf files
 ln -s $INSTALL_PATH/.config/* ~/.config/
-ln -s $INSTALL_PATH/.fonts ~/.fonts
-ln -s $INSTALL_PATH/.icons ~/.icons
-ln -s $INSTALL_PATH/.oh-my-zsh ~/.oh-my-zsh
-ln -s $INSTALL_PATH/.themes ~/.themes
-ln -s $INSTALL_PATH/.xinitrc ~/.xinitrc
-ln -s $INSTALL_PATH/.p10k.zsh ~/.p10k.zsh
-ln -s $INSTALL_PATH/.profile ~/.profile
-ln -s $INSTALL_PATH/.zshrc ~/.zshrc
-ln -s $INSTALL_PATH/.aliases ~/.aliases
+ln -s $INSTALL_PATH/.fonts ~/
+ln -s $INSTALL_PATH/.icons ~/
+ln -s $INSTALL_PATH/.oh-my-zsh ~/
+ln -s $INSTALL_PATH/.themes ~/
+ln -s $INSTALL_PATH/.xinitrc ~/
+ln -s $INSTALL_PATH/.p10k.zsh ~/
+ln -s $INSTALL_PATH/.profile ~/
+ln -s $INSTALL_PATH/.zshrc ~/
+ln -s $INSTALL_PATH/.aliases ~/
 
 # REMOVE SNAP
 sudo systemctl stop snapd && sudo systemctl disable snapd
@@ -69,14 +69,14 @@ sudo apt install system-config-printer cups
 sudo adduser $USER lpadmin
 
 # INSTALL MEDIA CONTROL
-sudo apt install playerctl brightnessctl pasystray pavucontrol
+sudo apt install playerctl brightnessctl pasystray pavucontrol pulseaudio-utils
 sudo usermod -aG video ${USER}
 
 # INSTALL KEYRING
 sudo apt install gnome-keyring libpam-gnome-keyring
 
 # INSTALL TOOLS
-sudo apt install keepass2 redshift-gtk geany terminator rfkill htop neofetch make mupdf qimgv
+sudo apt install keepass2 redshift-gtk geany terminator rfkill htop neofetch make mupdf qimgv xclip maim
 wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
 
 # INSTALL FLATPAK
@@ -94,6 +94,19 @@ flatpak install -y flathub org.dbgate.DbGate
 flatpak install -y flathub org.filezillaproject.Filezilla
 flatpak install -v flathub com.vivaldi.Vivaldi
 flatpak install -v flathub com.spotify.Client
+
+# CONFIGURE TOUCHPAD
+sudo apt install xserver-xorg-input-synaptics
+sudo cat << EOF | sudo tee /etc/X11/xorg.conf.d/50-synaptics.conf
+# Active touchpad gesture
+Section "InputClass"
+        Identifier "touchpad catchall"
+        Driver "synaptics"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        Option "TapButton2" "3"
+EndSection
+EOF
 
 # INSTALL DOCKER
 # Remove installed packages
