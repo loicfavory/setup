@@ -17,12 +17,10 @@ ln -s $INSTALL_PATH/.config/* ~/.config/
 ln -s $INSTALL_PATH/.fonts ~/.fonts
 ln -s $INSTALL_PATH/.icons ~/.icons
 ln -s $INSTALL_PATH/.oh-my-zsh ~/.oh-my-zsh
-ln -s $INSTALL_PATH/.ssh ~/.ssh
 ln -s $INSTALL_PATH/.themes ~/.themes
 ln -s $INSTALL_PATH/.xinitrc ~/.xinitrc
 ln -s $INSTALL_PATH/.p10k.zsh ~/.p10k.zsh
 ln -s $INSTALL_PATH/.profile ~/.profile
-ln -s $INSTALL_PATH/.zsh_history ~/.zsh_history
 ln -s $INSTALL_PATH/.zshrc ~/.zshrc
 ln -s $INSTALL_PATH/.aliases ~/.aliases
 
@@ -36,12 +34,6 @@ sudo apt install i3
 sudo apt install autorandr x11-xserver-utils arandr rofi nitrogen lxappearance
 sudo apt install dunst xssproxy redshift
 sudo apt install dbus-x11 dbus-user-session dbus-broker dbus gir1.2-freedesktop
-
-# INSTALL OH MY ZSH
-sudo apt install zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-echo "Please set default shell to /bin/zsh"
-chsh
 
 # INSTALL THUNAR
 sudo apt install thunar thunar-archive-plugin gvfs
@@ -74,8 +66,16 @@ wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_
 # INSTALL FLATPAK
 sudo apt install flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.mozilla.Thunderbird
-flatpak install flathub com.todoist.Todoist
-flatpak install flathub chat.rocket.RocketChat
-flatpak install flathub com.slack.Slack
-flatpak install flathub org.chromium.Chromium
+flatpak install -y flathub org.mozilla.Thunderbird
+flatpak install -y flathub com.todoist.Todoist
+flatpak install -y flathub chat.rocket.RocketChat
+flatpak install -y flathub com.slack.Slack
+flatpak install -y flathub org.chromium.Chromium
+flatpak install -y flathub org.dbgate.DbGate
+flatpak install -y flathub org.filezillaproject.Filezilla
+
+# INSTALL OH MY ZSH
+sudo apt install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+echo "Please set default shell to /bin/zsh"
+chsh
