@@ -61,6 +61,13 @@ sudo systemctl enable bluetooth
 sudo apt install playerctl brightnessctl pnmixer
 sudo usermod -aG video ${USER}
 
+# INSTALL KEYRING
+sudo apt install gnome-keyring libpam-gnome-keyring
+sudo echo 'password optional  pam_gnome_keyring.so' | sudo tee /etc/pam.d/common-password
+sudo echo 'auth optional  pam_gnome_keyring.so' | sudo tee /etc/pam.d/common-auth
+sudo echo 'session  optional  pam_gnome_keyring.so  auto_start' | sudo tee /etc/pam.d/common-session
+
+
 # INSTALL TOOLS
 sudo apt install keepass2 redshift-gtk geany terminator rfkill htop
 wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
@@ -79,6 +86,25 @@ flatpak install -y flathub org.chromium.Chromium
 flatpak install -y flathub org.dbgate.DbGate
 flatpak install -y flathub org.filezillaproject.Filezilla
 flatpak install -v flathub com.vivaldi.Vivaldi
+
+# INSTALL DOCKER
+# Remove installed packages
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo groupadd docker
+sudo usermod -aG docker $USER
 
 # INSTALL OH MY ZSH
 sudo apt install zsh

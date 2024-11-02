@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=pcloud_7ac354338c0a35598919d0ebf63202c7
+Comment=pcloud_7ac354338c0a35598919d0ebf63202c7startup script
+Exec=/home/loic/Applications/pcloud_7ac354338c0a35598919d0ebf63202c7
+StartupNotify=false
+Terminal=false
