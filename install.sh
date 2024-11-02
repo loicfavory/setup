@@ -34,7 +34,7 @@ sudo apt purge -y snapd
 sudo apt install xorg xinit
 sudo apt install i3
 sudo apt install autorandr x11-xserver-utils arandr rofi nitrogen lxappearance
-sudo apt install dunst xssproxy
+sudo apt install dunst xssproxy redshift
 sudo apt install dbus-x11 dbus-user-session dbus-broker dbus gir1.2-freedesktop
 
 # INSTALL OH MY ZSH
