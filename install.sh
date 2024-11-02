@@ -10,7 +10,6 @@ git config --global user.email "Loïc Lazar-Favory"
 sudo timedatectl set-timezone Europe/Paris
 
 # INSTALL CAMERA
-
 sudo apt install linux-oem-24.04
 sudo add-apt-repository ppa:oem-solutions-group/intel-ipu6
 sudo apt install libcamhal0 libcamhal-ipu6ep0 gstreamer1.0-icamera v4l2-relayd
@@ -38,6 +37,15 @@ sudo apt install i3
 sudo apt install autorandr x11-xserver-utils arandr rofi nitrogen lxappearance
 sudo apt install dunst xssproxy redshift
 sudo apt install dbus-x11 dbus-user-session dbus-broker dbus gir1.2-freedesktop
+
+# INSTALL APPIMAGE
+sudo add-apt-repository universe
+sudo apt install libfuse2
+wget -v https://github.com/TheAssassin/AppImageLauncher/releases/download/v2.2.0/appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb
+sudo apt install ./appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb
+rm appimagelauncher_2.2.0-travis995.0f91801.bionic_amd64.deb
+tar -zxvf ./assets/jetbrains-toolbox-2.5.1.34629.tar.gz
+sudo mv jetbrains-toolbox-2.5.1.34629/jetbrains-toolbox /opt/jetbrains-toolbox
 
 # INSTALL THUNAR
 sudo apt install thunar thunar-archive-plugin gvfs
@@ -78,8 +86,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 echo "Please set default shell to /bin/zsh"
 chsh
 
-
-
 # CONFIGURE NETWORK MANAGER
 sudo apt install network-manager network-manager-openvpn network-manager-gnome
 sudo cat << EOF | sudo tee /etc/netplan/01-network-manager-all.yaml
@@ -90,6 +96,6 @@ network:
 EOF
 sudo systemctl disable --now systemd-networkd.service
 
-apt autoremove
+sudo apt autoremove
 
 echo "Setup done, you should reboot now"
