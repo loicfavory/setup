@@ -63,9 +63,6 @@ sudo usermod -aG video ${USER}
 
 # INSTALL KEYRING
 sudo apt install gnome-keyring libpam-gnome-keyring
-sudo echo 'password optional  pam_gnome_keyring.so' | sudo tee /etc/pam.d/common-password
-sudo echo 'auth optional  pam_gnome_keyring.so' | sudo tee /etc/pam.d/common-auth
-sudo echo 'session  optional  pam_gnome_keyring.so  auto_start' | sudo tee /etc/pam.d/common-session
 
 
 # INSTALL TOOLS
