@@ -87,7 +87,7 @@ echo "Please set default shell to /bin/zsh"
 chsh
 
 # CONFIGURE NETWORK MANAGER
-sudo apt install network-manager network-manager-openvpn network-manager-gnome
+sudo apt install network-manager network-manager-openvpn network-manager-gnome network-manager-openvpn-gnome
 sudo cat << EOF | sudo tee /etc/netplan/01-network-manager-all.yaml
 # Let NetworkManager manage all devices on this system
 network:
