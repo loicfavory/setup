@@ -65,7 +65,7 @@ sudo usermod -aG video ${USER}
 sudo apt install gnome-keyring libpam-gnome-keyring
 
 # INSTALL TOOLS
-sudo apt install keepass2 redshift-gtk geany terminator rfkill htop
+sudo apt install keepass2 redshift-gtk geany terminator rfkill htop neofetch
 wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
 
 # INSTALL FLATPAK
