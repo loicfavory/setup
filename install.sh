@@ -2,6 +2,10 @@
 
 INSTALL_PATH=${PWD}
 
+# CONFIGURE GIT
+git config --global user.email "loic@effetb.com"
+git config --global user.email "Loïc Lazar-Favory"
+
 # SET TIMEZONE
 sudo timedatectl set-timezone Europe/Paris
 
@@ -38,18 +42,8 @@ sudo apt install dbus-x11 dbus-user-session dbus-broker dbus gir1.2-freedesktop
 # INSTALL THUNAR
 sudo apt install thunar thunar-archive-plugin gvfs
 
-# CONFIGURE NETWORK MANAGER
-sudo apt install network-manager network-manager-openvpn network-manager-gnome
-sudo cat << EOF | sudo tee /etc/netplan/01-network-manager-all.yaml
-# Let NetworkManager manage all devices on this system
-network:
-  version: 2
-  renderer: NetworkManager
-EOF
-sudo systemctl disable --now systemd-networkd.service
-
 # INSTALL BLUETOOTH
-sudo apt install bluetooth
+sudo apt install bluetooth blueman
 sudo apt install libldacbt-{abr,enc}2 libspa-0.2-bluetooth pulseaudio-module-bluetooth-
 sudo apt install pipewire-media-session- wireplumber
 systemctl --user --now start wireplumber.service
@@ -60,12 +54,15 @@ sudo apt install playerctl brightnessctl pnmixer
 sudo usermod -aG video ${USER}
 
 # INSTALL TOOLS
-sudo apt install keepass2
+sudo apt install keepass2 redshift-gtk geany terminator rfkill htop
 wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
 
 # INSTALL FLATPAK
 sudo apt install flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+sudo flatpak override --filesystem=$HOME/.themes
+sudo flatpak override --filesystem=$HOME/.icons
+sudo flatpak override --env=GTK_THEME=Catppuccin-Dark-Macchiato
 flatpak install -y flathub org.mozilla.Thunderbird
 flatpak install -y flathub com.todoist.Todoist
 flatpak install -y flathub chat.rocket.RocketChat
@@ -73,9 +70,26 @@ flatpak install -y flathub com.slack.Slack
 flatpak install -y flathub org.chromium.Chromium
 flatpak install -y flathub org.dbgate.DbGate
 flatpak install -y flathub org.filezillaproject.Filezilla
+flatpak install -v flathub com.vivaldi.Vivaldi
 
 # INSTALL OH MY ZSH
 sudo apt install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo "Please set default shell to /bin/zsh"
 chsh
+
+
+
+# CONFIGURE NETWORK MANAGER
+sudo apt install network-manager network-manager-openvpn network-manager-gnome
+sudo cat << EOF | sudo tee /etc/netplan/01-network-manager-all.yaml
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  renderer: NetworkManager
+EOF
+sudo systemctl disable --now systemd-networkd.service
+
+apt autoremove
+
+echo "Setup done, you should reboot now"
