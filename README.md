@@ -24,6 +24,18 @@ cd setup
 
 Reboot
 
+## Finish bluetooth configuration
+
+
+Edit the file /etc/bluetooth/main.conf
+
+Uncomment FastConnectable config and set it to true: `FastConnectable = true`
+
+Uncomment `ReconnectAttempts=7` (set the value to whatever number that you want)
+
+Uncomment `ReconnectIntervals=1, 2, 3`
+
+
 ## Secured data
 
 Install pCloud

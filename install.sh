@@ -56,9 +56,20 @@ sudo apt install libldacbt-{abr,enc}2 libspa-0.2-bluetooth pulseaudio-module-blu
 sudo apt install pipewire-media-session- wireplumber
 systemctl --user --now start wireplumber.service
 sudo systemctl enable bluetooth
+# CONFIGURE KEYCHRON
+# Function keys are used as first key. Pressing 'F8' key will behave like a F8.
+# Pressing 'fn'+'F8' will act as special key (play/pause).
+echo "options hid_apple fnmode=2" | sudo tee /etc/modprobe.d/hid_apple.conf
+# Disable autosuspend
+echo "options btusb enable_autosuspend=n" | sudo tee /etc/modprobe.d/btusb_disable_autosuspend.conf
+sudo update-initramfs -u -k all
+
+# INSTALL PRINTERS
+sudo apt install system-config-printer cups
+sudo adduser $USER lpadmin
 
 # INSTALL MEDIA CONTROL
-sudo apt install playerctl brightnessctl pnmixer pavucontrol
+sudo apt install playerctl brightnessctl pasystray pavucontrol
 sudo usermod -aG video ${USER}
 
 # INSTALL KEYRING
