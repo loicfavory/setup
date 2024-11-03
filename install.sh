@@ -85,15 +85,23 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 sudo flatpak override --filesystem=$HOME/.themes
 sudo flatpak override --filesystem=$HOME/.icons
 sudo flatpak override --env=GTK_THEME=Catppuccin-Dark-Macchiato
+# Communication tools
 flatpak install -y flathub org.mozilla.Thunderbird
-flatpak install -y flathub com.todoist.Todoist
 flatpak install -y flathub chat.rocket.RocketChat
 flatpak install -y flathub com.slack.Slack
+# Browsers
 flatpak install -y flathub org.chromium.Chromium
+flatpak install -v flathub com.vivaldi.Vivaldi
+# Productivity
+flatpak install -y flathub com.todoist.Todoist
 flatpak install -y flathub org.dbgate.DbGate
 flatpak install -y flathub org.filezillaproject.Filezilla
-flatpak install -v flathub com.vivaldi.Vivaldi
+flatpak install -v flathub org.libreoffice.LibreOffice
+flatpak install -y flathub org.inkscape.Inkscape
+flatpak install -y flathub org.gimp.GIMP
+# Media
 flatpak install -v flathub com.spotify.Client
+
 
 # CONFIGURE TOUCHPAD
 sudo apt install xserver-xorg-input-synaptics
