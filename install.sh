@@ -9,6 +9,10 @@ git config --global user.email "Loïc Lazar-Favory"
 # SET TIMEZONE
 sudo timedatectl set-timezone Europe/Paris
 
+# REMOVE SNAP
+sudo systemctl stop snapd && sudo systemctl disable snapd
+sudo apt purge -y snapd
+
 # INSTALL CAMERA
 sudo apt install linux-oem-24.04
 sudo add-apt-repository ppa:oem-solutions-group/intel-ipu6
@@ -27,9 +31,8 @@ ln -s $INSTALL_PATH/.profile ~/
 ln -s $INSTALL_PATH/.zshrc ~/
 ln -s $INSTALL_PATH/.aliases ~/
 
-# REMOVE SNAP
-sudo systemctl stop snapd && sudo systemctl disable snapd
-sudo apt purge -y snapd
+# Install neovim
+sudo apt install neovim
 
 # INSTALL I3
 sudo apt install xorg xinit
