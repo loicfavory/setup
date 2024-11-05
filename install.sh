@@ -13,11 +13,7 @@ sudo timedatectl set-timezone Europe/Paris
 sudo systemctl stop snapd && sudo systemctl disable snapd
 sudo apt purge -y snapd
 
-# INSTALL CAMERA
-sudo apt install linux-oem-24.04
-sudo add-apt-repository ppa:oem-solutions-group/intel-ipu6
-sudo apt install libcamhal0 libcamhal-ipu6ep0 gstreamer1.0-icamera v4l2-relayd
-sudo apt install linux-modules-ipu6-oem-24.04
+
 
 # Install conf files
 ln -s $INSTALL_PATH/.config/* ~/.config/
@@ -78,8 +74,11 @@ sudo usermod -aG video ${USER}
 # INSTALL KEYRING
 sudo apt install gnome-keyring libpam-gnome-keyring
 
+# INSTALL SAMBA
+ sudo apt install gvfs-backends smbclient cifs-utils
+
 # INSTALL TOOLS
-sudo apt install keepass2 redshift-gtk geany terminator rfkill htop neofetch make mupdf qimgv xclip maim
+sudo apt install keepass2 redshift-gtk geany terminator rfkill htop neofetch make mupdf qimgv xclip maim qalculate-gtk
 wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
 
 # INSTALL FLATPAK
@@ -88,6 +87,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 sudo flatpak override --filesystem=$HOME/.themes
 sudo flatpak override --filesystem=$HOME/.icons
 sudo flatpak override --env=GTK_THEME=Catppuccin-Dark-Macchiato
+flatpak install -y flathub com.github.tchx84.Flatseal
 # Communication tools
 flatpak install -y flathub org.mozilla.Thunderbird
 flatpak install -y flathub chat.rocket.RocketChat
@@ -155,5 +155,11 @@ EOF
 sudo systemctl disable --now systemd-networkd.service
 
 sudo apt autoremove
+
+# INSTALL CAMERA
+sudo apt install oem-somerville-tentacool-meta
+sudo apt update
+sudo apt full-upgrade
+sudo systemctl poweroff
 
 echo "Setup done, you should reboot now"

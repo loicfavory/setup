@@ -1,5 +1,5 @@
 alias ao="autorandr -l office"
 alias ah="autorandr -l home"
 alias am="autorandr -l mobile"
-alias up="sudo apt update && sudo apt full-upgrade && sudo apt autoremove && flatpak update"
+alias up="sudo apt update && sudo apt full-upgrade && sudo apt autoremove && flatpak -y update"
 alias dockerphp="docker exec -i php php ./vendor/bin/php-cs-fixer"
