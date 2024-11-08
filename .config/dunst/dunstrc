@@ -5,7 +5,7 @@ corner_radius = 10
 format = "<b>%a | %s</b>\n%b"
 padding = 20
 horizontal_padding = 20
-frame_width = 1
+frame_width = 200px
 
 [urgency_low]
 background = "#24273a"
