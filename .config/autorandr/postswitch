@@ -5,5 +5,5 @@
 dunstify -i display "Display profile" "$AUTORANDR_CURRENT_PROFILE"
 #sleep 1
 nitrogen --restore &
-#:wqdunstify -i display "Nitrogen restored"
+dunstify -i display "Nitrogen restored"
 
