@@ -25,6 +25,8 @@ ln -s $INSTALL_PATH/.profile ~/
 ln -s $INSTALL_PATH/.zshrc ~/
 ln -s $INSTALL_PATH/.aliases ~/
 
+exit 0
+
 # Install neovim
 sudo apt install neovim
 
@@ -94,7 +96,7 @@ echo "options btusb enable_autosuspend=n" | sudo tee /etc/modprobe.d/btusb_disab
 sudo update-initramfs -u -k all
 
 # INSTALL PRINTERS
-sudo apt install system-config-printer cups
+sudo apt install system-config-printer cups simple-scan
 sudo adduser $USER lpadmin
 
 # INSTALL MEDIA CONTROL
@@ -105,10 +107,12 @@ sudo usermod -aG video ${USER}
 sudo apt install gnome-keyring libpam-gnome-keyring
 
 # INSTALL SAMBA
- sudo apt install gvfs-backends smbclient cifs-utils
+sudo apt install gvfs-backends smbclient cifs-utils
 
 # INSTALL TOOLS
-sudo apt install keepass2 redshift-gtk geany terminator rfkill htop neofetch make mupdf qimgv xclip maim qalculate-gtk smartmontools
+sudo apt install keepass2 redshift-gtk geany terminator rfkill htop neofetch make mupdf \
+      qimgv xclip maim qalculate-gtk smartmontools gnome-screenshot xdotool \
+      tlp tlp-rdw
 wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
 
 # INSTALL FLATPAK
