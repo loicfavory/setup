@@ -1,9 +1,8 @@
 #! /bin/sh
 
 #i3 restart
-#/home/loic/.config/polybar/scripts/launch.sh
 dunstify -i display "Display profile" "$AUTORANDR_CURRENT_PROFILE"
-#sleep 1
+sleep 2
 nitrogen --restore &
 dunstify -i display "Nitrogen restored"
 

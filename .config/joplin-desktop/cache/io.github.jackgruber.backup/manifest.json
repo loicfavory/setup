@@ -2,7 +2,7 @@
 	"manifest_version": 1,
 	"id": "io.github.jackgruber.backup",
 	"app_min_version": "2.1.3",
-	"version": "1.4.0",
+	"version": "1.4.2",
 	"name": "Backup",
 	"description": "Plugin to create manual and automatic backups.",
 	"author": "JackGruber",
@@ -34,5 +34,5 @@
 	"icons": {
 		"256": "img/icon_256.png"
 	},
-	"_package_hash": "a99e6a00cd7b328f7529f76be4adf863"
+	"_package_hash": "18cfa1bed629b36214284f76f2c82093"
 }

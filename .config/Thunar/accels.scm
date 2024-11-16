@@ -17,6 +17,7 @@
 ; (gtk_accel_path "<Actions>/ThunarWindow/view-side-pane-menu" "")
 ; (gtk_accel_path "<Actions>/ThunarBookmarks/65769165fb846d42b371f5ffb0db1c2e" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/open-network" "")
+; (gtk_accel_path "<Actions>/ThunarBookmarks/520521f11b33761e68c0c965db84fc7a" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/contents/help-menu" "")
 ; (gtk_accel_path "<Actions>/ThunarLauncher/move-to-trash" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/back-alt" "BackSpace")
