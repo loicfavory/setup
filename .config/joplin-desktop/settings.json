@@ -1,8 +1,10 @@
 {
 	"$schema": "https://joplinapp.org/schema/settings.json",
+	"editor.codeView": false,
 	"sync.target": 5,
 	"sync.5.path": "https://echange.effetb.com/remote.php/dav/files/Loic/Notes",
 	"sync.5.username": "loic",
+	"richTextBannerDismissed": true,
 	"locale": "fr_FR",
 	"theme": 6,
 	"themeAutoDetect": false,

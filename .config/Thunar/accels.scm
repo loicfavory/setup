@@ -3,7 +3,6 @@
 ;
 ; (gtk_accel_path "<Actions>/ThunarLauncher/delete-3" "<Shift>KP_Delete")
 ; (gtk_accel_path "<Actions>/ThunarBookmarks/2f7cbcf66b3d38f8853a08f2d7cb1526" "")
-; (gtk_accel_path "<Actions>/ThunarBookmarks/1d86a08d6ae4ec22409c6dc2abd11b77" "")
 ; (gtk_accel_path "<Actions>/ThunarLauncher/delete" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/invert-selection" "")
 ; (gtk_accel_path "<Actions>/ThunarBookmarks/54280f4e863a76e8e332f30b6d2e535f" "")

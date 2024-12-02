@@ -138,6 +138,11 @@ flatpak install -y flathub org.gimp.GIMP
 # Media
 flatpak install -v flathub com.spotify.Client
 
+# Install Solaar
+sudo add-apt-repository ppa:solaar-unifying/stable
+sudo apt update
+sudo apt install solaar
+
 # INSTALL DBGATE
 wget https://github.com/dbgate/dbgate/releases/latest/download/dbgate-latest.deb
 sudo apt install ./dbgate-latest.deb
