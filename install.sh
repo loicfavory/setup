@@ -83,8 +83,8 @@ sudo apt install thunar thunar-archive-plugin gvfs
 
 # INSTALL BLUETOOTH
 sudo apt install bluetooth blueman
-sudo apt install libldacbt-{abr,enc}2 libspa-0.2-bluetooth pulseaudio-module-bluetooth-
-sudo apt install pipewire-media-session- wireplumber
+sudo apt install pipewire pipewire-audio pipewire-pulse wireplumber libspa-0.2-bluetooth
+systemctl --user --now enable wireplumber.service
 systemctl --user --now start wireplumber.service
 sudo systemctl enable bluetooth
 # CONFIGURE KEYCHRON
@@ -111,7 +111,7 @@ sudo apt install gvfs-backends smbclient cifs-utils
 
 # INSTALL TOOLS
 sudo apt install keepass2 redshift-gtk geany terminator rfkill htop neofetch make mupdf \
-      qimgv xclip maim qalculate-gtk smartmontools gnome-screenshot xdotool \
+      qimgv xclip maim qalculate-gtk smartmontools gnome-screenshot ffmpeg xdotool \
       tlp tlp-rdw
 wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
 
@@ -128,13 +128,13 @@ flatpak install -y flathub chat.rocket.RocketChat
 flatpak install -y flathub com.slack.Slack
 # Browsers
 flatpak install -y flathub org.chromium.Chromium
-flatpak install -v flathub com.vivaldi.Vivaldi
 # Productivity
 flatpak install -y flathub com.todoist.Todoist
 flatpak install -y flathub org.filezillaproject.Filezilla
 flatpak install -v flathub org.libreoffice.LibreOffice
 flatpak install -y flathub org.inkscape.Inkscape
 flatpak install -y flathub org.gimp.GIMP
+flatpak install flathub io.github.zen_browser.zen
 # Media
 flatpak install -v flathub com.spotify.Client
 
@@ -181,6 +181,7 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 
 # INSTALL OH MY ZSH
+curl -sS https://starship.rs/install.sh | sh
 sudo apt install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo "Please set default shell to /bin/zsh"
