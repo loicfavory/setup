@@ -25,8 +25,6 @@ ln -s $INSTALL_PATH/.profile ~/
 ln -s $INSTALL_PATH/.zshrc ~/
 ln -s $INSTALL_PATH/.aliases ~/
 
-exit 0
-
 # Install neovim
 sudo apt install neovim
 
